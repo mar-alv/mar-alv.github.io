@@ -16,8 +16,23 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v2
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: '9.6.0'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build your site
+        run: pnpm run build
+
+      - name: Upload site for deployment
+        uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: dist
 
   deploy:
     needs: build
@@ -26,6 +41,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Download site artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: site
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
