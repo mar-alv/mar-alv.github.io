@@ -50,7 +50,7 @@ module.exports = {
         }
       },
 			fontFamily: {
-				'caveat': ['Reenie Beanie', 'cursive']
+				'reenie': ['Reenie Beanie', 'cursive']
 			},
       borderRadius: {
         lg: 'var(--radius)',
