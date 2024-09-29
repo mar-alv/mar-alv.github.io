@@ -1,51 +1,53 @@
 ---
-// CursorFollower.astro
 ---
 
 <style>
   .circle {
     position: absolute;
-    width: 50px; /* Default size of the circle */
-    height: 50px; /* Default size of the circle */
+    width: 50px;
+    height: 50px;
+
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 50%;
     background-color: rgba(253, 230, 138, .7);
-    //background-color: rgba(252, 211, 77, .7);
-    //background-color: rgba(251, 191, 36, .7);
-    border-radius: 50%; /* Makes it a circle */
-    pointer-events: none; /* Allows clicking through the circle */
-    transition: transform 0.1s ease, opacity 0.3s ease, width 0.5s ease, height 0.5s ease; /* Smooth following effect */
-    opacity: 0; /* Initially hidden */
+    transition: transform 0.1s ease, opacity 0.3s ease, width 0.5s ease, height 0.5s ease;
   }
 
   .visible {
-    opacity: 1; /* Fully visible */
+    opacity: 1;
   }
 
   .small {
-    width: 0px; /* Size when not moving */
-    height: 0px; /* Size when not moving */
+    width: 0px;
+    height: 0px;
   }
 </style>
 
-<div class="circle small" id="cursorCircle"></div>
+<div class="circle small" id="follower"></div>
 
 <script>
-  const cursorCircle = document.getElementById('cursorCircle');
-  let timeout; // Variable to store the timeout
+  const follower = document.getElementById('follower')
+
+  let timeout = 0
 
   document.addEventListener('mousemove', (event) => {
-    // Center the circle on the cursor
-    cursorCircle.style.transform = `translate(${event.clientX - 15}px, ${event.clientY - 15}px)`; // Adjust for circle's size
-    cursorCircle.classList.add('visible'); // Show circle on move
-    cursorCircle.classList.remove('small'); // Restore default size on move
+		if (!follower) return
 
-    // Clear the previous timeout and set a new one
-    clearTimeout(timeout);
+    follower.style.transform = `translate(${event.clientX - 15}px, ${event.clientY - 15}px)`
+    follower.classList.add('visible')
+    follower.classList.remove('small')
+
+    clearTimeout(timeout)
+
     timeout = setTimeout(() => {
-      cursorCircle.classList.add('small'); // Reduce size when not moving
-    }, 500); // Delay before reducing the size (in milliseconds)
-  });
+      follower.classList.add('small')
+    }, 500)
+  })
 
   document.addEventListener('mouseleave', () => {
-    cursorCircle.classList.add('small'); // Reduce size when leaving
-  });
+		if (!follower) return
+
+    follower.classList.add('small')
+  })
 </script>
