@@ -33,10 +33,16 @@ const currentPath = Astro.url.pathname
 	<body class='h-dvh relative font-reenie text-amber-900 bg-amber-50/50'>
 		<CursorFollower />
 
-		<div class='h-full max-w-6xl p-5 w-full mx-auto'>
+		<div class='h-full max-w-6xl w-full mx-auto p-5 flex flex-col'>
 			<Header currentPath={currentPath} />
 
 			<slot />
+
+			<footer>
+				<p class='text-center text-3xl'>
+					Made with 🧡 and Astro
+				</p>
+			</footer>
 		</div>
 	</body>
 </html>

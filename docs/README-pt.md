@@ -1,32 +1,31 @@
-<h1 align='center'>🚧 mar-alv.github.io in progress... 🚧</h1>
+<h1 align='center'>🚧 mar-alv.github.io em progresso... 🚧</h1>
 
 <div align='center'>
 
-  [🇵🇹 Português](./docs/README-pt.md)
+  [⬅️ Voltar](../README.md)
 
 </div>
 
-## 📚 Summary
-- [❕ About](#about)
-- [📖 Instructions](#instructions)
-	- [📥 Install](#install)
-	- [🚀 Run Locally](#locally)
-- [⚡ Endpoints](#endpoints)
-- [📂 Structure](#structure)
-- [🧰 Technologies](#technologies)
-- [👤 Author](#author)
+## 📚 Sumário
+- [❕ Sobre](#about)
+- [📖 Instruções](#instructions)
+	- [📥 Instalar](#install)
+	- [🚀 Rodar Localmente](#locally)
+- [📂 Estrutura](#structure)
+- [🧰 Tecnologias](#technologies)
+- [👤 Autor](#author)
 
-### <a id='about' style='text-decoration: none; color: inherit;'>❕ About</a>
-My portfolio page, highly inspired by others designs on [Dribble](https://dribbble.com) and [Cofolios](https://dribbble.com/search/portfolio).
+### <a id='about' style='text-decoration: none; color: inherit;'>❕ Sobre</a>
+Minha página de portifólio, muito inspirada pelos designs de outros no [Dribble](https://dribbble.com) e [Cofolios](https://dribbble.com/search/portfolio).
 
-### <a id='instructions' style='text-decoration: none; color: inherit;'>📖 Instructions</a>
-#### <a id='instalar' style='text-decoration: none; color: inherit;'>📥 Install</a>
-Paste this 1º command into a terminal opened within a folder of your preference to clone the project
+### <a id='instructions' style='text-decoration: none; color: inherit;'>📖 Instruções</a>
+#### <a id='install' style='text-decoration: none; color: inherit;'>📥 Instalar</a>
+Cole o 1º comando em um terminal aberto dentro da pasta de sua preferência para clonar o projeto
 ```sh
-git clone https://github.com/mar-alv/mar-alv.github.io.git
+git clone https://github.com/mar-alv/REPO.git
 ```
 
-Then run one of the versions of the 2º command to install the dependencies
+Em seguida rode uma das versões do 2º comando para instalar as dependências
 ```sh
 npm i
 ```
@@ -34,13 +33,13 @@ npm i
 npm install
 ```
 
-#### <a id='locally' style='text-decoration: none; color: inherit;'>🚀 Run Locally</a>
-Paste the command into a terminal, the application will be accessable through this [link](http://localhost:5173)
+#### <a id='locally' style='text-decoration: none; color: inherit;'>🚀 Rodar Localmente</a>
+Cole o comando em um terminal, a aplicação estará acessível através desse [link](http://localhost:5173)
 ```sh
 npm run dev
 ```
 
-### <a id='structure' style='text-decoration: none; color: inherit;'>📂 Structure</a>
+#### <a id='structure' style='text-decoration: none; color: inherit;'>📂 Estrutura</a>
 ```
 │ .astro/
 │   └── ...
@@ -82,14 +81,14 @@ npm run dev
 #### Styling
 [![Tailwind CSS](https://img.shields.io/badge/tailwind--css-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-### <a id='author' style='text-decoration: none; color: inherit;'>👤 Author</a>
+### <a id='author' style='text-decoration: none; color: inherit;'>👤 Autor</a>
 <div style='display: flex; align-items: center;'>
 		<img src='https://github.com/mar-alv.png' alt='Marcelo Alvarez GitHub profile picture' style='width: 150px; border-radius: 50%; margin-right: 20px;'>
 		<div>
 				<strong>Marcelo Alvarez</strong>
 				<br>
 				<em>Front-end Developer</em><br>
-				<span>"Some AI generated funny quote here 😗"</span><br>
+				<span>"Uma citação engraçada gerada por IA aqui 😗"</span><br>
 				<a href='https://www.linkedin.com/in/mar-alv'>
 					<img
 						alt='LinkedIn'
