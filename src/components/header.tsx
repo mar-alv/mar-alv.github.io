@@ -1,3 +1,5 @@
+import { Linkedin } from 'lucide-react'
+
 import { Button } from '@/components/ui/button'
 import {
 	NavigationMenu,
@@ -5,7 +7,9 @@ import {
 	NavigationMenuLink,
 	NavigationMenuList
 } from '@/components/ui/navigation-menu'
+
 import { cn } from '@/lib/utils'
+import { GithubLogo } from '@phosphor-icons/react'
 
 interface Props {
 	currentPath: string
@@ -45,6 +49,20 @@ export function Header({ currentPath }: Props) {
 					</NavigationMenuItem>
 				</NavigationMenuList>
 			</NavigationMenu>
+
+			<div className='gap-2 flex'>
+				<Button asChild variant='ghost'>
+					<a href='https://github.com/mar-alv' target='_blank'>
+						<GithubLogo size={16} />
+					</a>
+				</Button>
+
+				<Button asChild variant='ghost'>
+					<a href='https://www.linkedin.com/in/marcelo-santos-alvarez/' target='_blank'>
+						<Linkedin size={16} />
+					</a>
+				</Button>
+			</div>
 		</header>
 	)
 }
