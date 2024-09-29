@@ -1,0 +1,51 @@
+---
+// CursorFollower.astro
+---
+
+<style>
+  .circle {
+    position: absolute;
+    width: 50px; /* Default size of the circle */
+    height: 50px; /* Default size of the circle */
+    background-color: rgba(253, 230, 138, .7);
+    //background-color: rgba(252, 211, 77, .7);
+    //background-color: rgba(251, 191, 36, .7);
+    border-radius: 50%; /* Makes it a circle */
+    pointer-events: none; /* Allows clicking through the circle */
+    transition: transform 0.1s ease, opacity 0.3s ease, width 0.5s ease, height 0.5s ease; /* Smooth following effect */
+    opacity: 0; /* Initially hidden */
+  }
+
+  .visible {
+    opacity: 1; /* Fully visible */
+  }
+
+  .small {
+    width: 0px; /* Size when not moving */
+    height: 0px; /* Size when not moving */
+  }
+</style>
+
+<div class="circle small" id="cursorCircle"></div>
+
+<script>
+  const cursorCircle = document.getElementById('cursorCircle');
+  let timeout; // Variable to store the timeout
+
+  document.addEventListener('mousemove', (event) => {
+    // Center the circle on the cursor
+    cursorCircle.style.transform = `translate(${event.clientX - 15}px, ${event.clientY - 15}px)`; // Adjust for circle's size
+    cursorCircle.classList.add('visible'); // Show circle on move
+    cursorCircle.classList.remove('small'); // Restore default size on move
+
+    // Clear the previous timeout and set a new one
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      cursorCircle.classList.add('small'); // Reduce size when not moving
+    }, 500); // Delay before reducing the size (in milliseconds)
+  });
+
+  document.addEventListener('mouseleave', () => {
+    cursorCircle.classList.add('small'); // Reduce size when leaving
+  });
+</script>

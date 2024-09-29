@@ -1,6 +1,6 @@
 ---
+import CursorFollower from '@/components/cursor-follower.astro';
 import { Header } from '@/components/header'
-import { ThemeToggle } from '@/components/theme-toggle'
 
 interface Props {
 	title: string
@@ -31,10 +31,12 @@ const currentPath = Astro.url.pathname
 	</head>
 
 	<body class='h-dvh relative text-amber-900 bg-amber-50/50'>
+		<CursorFollower />
+
 		<div class='h-full max-w-6xl p-5 w-full mx-auto'>
 			<Header currentPath={currentPath} />
 
-		<slot />
+			<slot />
 		</div>
 	</body>
 </html>
