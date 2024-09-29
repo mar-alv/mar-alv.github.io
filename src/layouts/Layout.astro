@@ -7,6 +7,8 @@ interface Props {
 }
 
 const { title } = Astro.props
+
+const currentPath = Astro.url.pathname
 ---
 
 <!doctype html>
@@ -27,14 +29,16 @@ const { title } = Astro.props
 
 		<title>{title}</title>
 	</head>
-	<body>
-		<Header>
-			<ThemeToggle client:load />
-		</Header>
+
+	<body class='h-dvh relative text-amber-900 bg-amber-50/50'>
+		<div class='h-full max-w-6xl p-5 w-full mx-auto'>
+			<Header currentPath={currentPath} />
 
 		<slot />
+		</div>
 	</body>
 </html>
+
 <style is:global>
 	* { 
 		transition: color .3s, background-color .3s, transform .3s;

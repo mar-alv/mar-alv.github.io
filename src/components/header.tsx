@@ -1,42 +1,50 @@
+import { Button } from '@/components/ui/button'
 import {
 	NavigationMenu,
 	NavigationMenuItem,
 	NavigationMenuLink,
-	NavigationMenuList,
-	navigationMenuTriggerStyle
+	NavigationMenuList
 } from '@/components/ui/navigation-menu'
-import type { ReactNode } from 'react'
+import { cn } from '@/lib/utils'
 
 interface Props {
-	children: ReactNode
+	currentPath: string
 }
 
-export function Header({ children }: Props) {
+export function Header({ currentPath }: Props) {
 	return (
 		<header className='flex justify-between items-center'>
-			<div>
-				Logo
-			</div>
+			<h3 className='text-3xl'>
+				Marcelo Alvarez
+			</h3>
 
-			<div className='flex'>
-				<NavigationMenu>
-					<NavigationMenuList>
-						<NavigationMenuItem>
-							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
-								Documentation
+			<NavigationMenu>
+				<NavigationMenuList>
+					<NavigationMenuItem>
+						<Button asChild size='lg' variant='link' className={cn(currentPath === '/' && 'font-extrabold')}>
+							<NavigationMenuLink href='/'>
+								Home
 							</NavigationMenuLink>
-						</NavigationMenuItem>
+						</Button>
+					</NavigationMenuItem>
 
-						<NavigationMenuItem>
-							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
-								Work Experience
+					<NavigationMenuItem>
+						<Button asChild size='lg' variant='link'>
+							<NavigationMenuLink href='/works'>
+								Works
 							</NavigationMenuLink>
-						</NavigationMenuItem>
-					</NavigationMenuList>
-				</NavigationMenu>
+						</Button>
+					</NavigationMenuItem>
 
-				{children}
-			</div>
+					<NavigationMenuItem>
+						<Button asChild size='lg' variant='link'>
+							<NavigationMenuLink href='/about'>
+								About
+							</NavigationMenuLink>
+						</Button>
+					</NavigationMenuItem>
+				</NavigationMenuList>
+			</NavigationMenu>
 		</header>
 	)
 }
