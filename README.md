@@ -2,7 +2,7 @@
 
 <div align='center'>
 
-  [🇵🇹 Português](./docs/README-pt.md)
+  [🇧🇷 Português](./docs/README-pt.md)
 
 </div>
 
