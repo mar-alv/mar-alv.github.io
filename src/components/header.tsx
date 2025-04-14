@@ -16,14 +16,15 @@ const navLinks = [
     href: '/',
     label: 'Home'
   },
-  {
+	// TODO: uncomment once these pages are done
+  /* {
     href: '/works',
     label: 'Works'
   },
   {
     href: '/about',
     label: 'About'
-  }
+  } */
 ]
 
 export function Header({ currentPath }: Props) {
