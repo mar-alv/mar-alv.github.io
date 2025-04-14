@@ -15,8 +15,8 @@ const navLinks = [
   {
     href: '/',
     label: 'Home'
-  },
-	// TODO: uncomment once these pages are done
+  }
+  // TODO: uncomment once these pages are done
   /* {
     href: '/works',
     label: 'Works'

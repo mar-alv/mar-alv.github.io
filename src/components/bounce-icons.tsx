@@ -1,7 +1,11 @@
 import { motion, animate } from 'motion/react'
 import { useRef } from 'react'
 
-export function BounceIcons({ icons }: { icons: string[] }) {
+interface BounceIconsProps {
+  icons: string[]
+}
+
+export function BounceIcons({ icons }: BounceIconsProps) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   function handleHover() {
