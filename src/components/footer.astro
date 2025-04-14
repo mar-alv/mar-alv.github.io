@@ -21,21 +21,23 @@ const socialLinks = [
 ]
 ---
 
-<footer class="flex justify-between items-center">
-  <div class="gap-3 flex">
-    {socialLinks.map(({ href, ariaLabel, icon: Icon }) => (
-      <Button asChild size="icon" variant="ghost">
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={ariaLabel}
-        >
-          <Icon size={24} />
-        </a>
-      </Button>
-    ))}
+<footer class='flex justify-between items-center'>
+  <div class='gap-3 flex'>
+    {
+      socialLinks.map(({ href, ariaLabel, icon: Icon }) => (
+        <Button asChild size='icon' variant='ghost'>
+          <a
+            href={href}
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label={ariaLabel}
+          >
+            <Icon size={24} />
+          </a>
+        </Button>
+      ))
+    }
   </div>
 
-  <p class="text-center text-3xl">Made with 🧡 and Astro</p>
+  <p class='text-center text-3xl'>Made with 🧡 and Astro</p>
 </footer>

@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,
@@ -6,42 +5,51 @@ import {
   NavigationMenuLink,
   NavigationMenuList
 } from '@/components/ui/navigation-menu'
-
 import { cn } from '@/lib/utils'
 
 interface Props {
   currentPath: string
 }
 
+const navLinks = [
+  {
+    href: '/',
+    label: 'Home'
+  },
+  {
+    href: '/works',
+    label: 'Works'
+  },
+  {
+    href: '/about',
+    label: 'About'
+  }
+]
+
 export function Header({ currentPath }: Props) {
   return (
     <header className='flex justify-between items-center'>
-      <h3 className='text-3xl'>Marcelo Alvarez</h3>
+      <h3 className='text-4xl'>Marcelo Alvarez</h3>
 
       <NavigationMenu>
         <NavigationMenuList>
-          <NavigationMenuItem>
-            <Button
-              asChild
-              size='lg'
-              variant='link'
-              className={cn(currentPath === '/' && 'font-extrabold')}
-            >
-              <NavigationMenuLink href='/'>Home</NavigationMenuLink>
-            </Button>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <Button asChild size='lg' variant='link'>
-              <NavigationMenuLink href='/works'>Works</NavigationMenuLink>
-            </Button>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <Button asChild size='lg' variant='link'>
-              <NavigationMenuLink href='/about'>About</NavigationMenuLink>
-            </Button>
-          </NavigationMenuItem>
+          {navLinks.map((navLink) => (
+            <NavigationMenuItem>
+              <Button
+                asChild
+                size='lg'
+                variant='link'
+                className={cn(
+                  'text-3xl text-amber-900',
+                  currentPath === navLink.href && 'font-extrabold'
+                )}
+              >
+                <NavigationMenuLink href={navLink.href}>
+                  {navLink.label}
+                </NavigationMenuLink>
+              </Button>
+            </NavigationMenuItem>
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
     </header>
