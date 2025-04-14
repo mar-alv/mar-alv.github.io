@@ -1,10 +1,7 @@
 // TODO: update to version 4
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-		'./app/**/*.{ts,tsx}',
-    './src/**/*.{astro,ts,tsx}'
-  ],
+  content: ['./app/**/*.{ts,tsx}', './src/**/*.{astro,ts,tsx}'],
   prefix: '',
   theme: {
     container: {
@@ -50,9 +47,9 @@ module.exports = {
           foreground: 'hsl(var(--card-foreground))'
         }
       },
-			fontFamily: {
-				'reenie': ['Reenie Beanie', 'cursive']
-			},
+      fontFamily: {
+        'reenie': ['Reenie Beanie', 'cursive']
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
