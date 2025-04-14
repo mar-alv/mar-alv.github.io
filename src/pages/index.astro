@@ -1,6 +1,7 @@
 ---
+import { BounceIcons } from '@/components/bounce-icons'
+import Layout from '@/layouts/Layout.astro'
 import '@/styles/globals.css'
-import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title='Marcelo Alvarez - Home'>
@@ -8,8 +9,9 @@ import Layout from '../layouts/Layout.astro'
     class='h-full flex flex-wrap justify-center items-center md:justify-between'
   >
     <div>
-      <!-- TODO: animate emojis-->
-      <h1 class='text-3xl'>Hey! I'm Marcelo🍯☀️🍊</h1>
+      <h1 class='flex text-3xl'>
+        Hey! I'm Marcelo<BounceIcons icons={['🍯', '☀️', '🍊']} client:load />
+      </h1>
       <p class='max-w-md text-5xl'>
         Coding in the sunshine, fueled by caffeine—where creativity meets
         functionality.
