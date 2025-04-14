@@ -35,7 +35,7 @@ export function BounceIcons({ icons }: { icons: string[] }) {
   return (
     <div
       ref={containerRef}
-      className='flex text-3xl cursor-pointer'
+      className='flex text-3xl'
       onMouseEnter={handleHover}
     >
       {icons.map((icon, i) => (

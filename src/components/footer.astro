@@ -1,5 +1,6 @@
 ---
 import { CodepenLogo, GithubLogo, LinkedinLogo } from '@phosphor-icons/react'
+import { BounceIcons } from '@/components/bounce-icons'
 import { Button } from '@/components/ui/button'
 
 const socialLinks = [
@@ -39,5 +40,7 @@ const socialLinks = [
     }
   </div>
 
-  <p class='text-center text-3xl'>Made with 🧡 and Astro</p>
+  <span class='flex text-3xl'>
+    Made with <BounceIcons icons={['🧡']} client:load /> and Astro
+  </span>
 </footer>
