@@ -1,3 +1,41 @@
-<footer>
-  <p class='text-center text-3xl'>Made with 🧡 and Astro</p>
+---
+import { CodepenLogo, GithubLogo, LinkedinLogo } from '@phosphor-icons/react'
+import { Button } from '@/components/ui/button'
+
+const socialLinks = [
+  {
+    ariaLabel: 'Visit LinkedIn profile (opens in a new tab)',
+    href: 'https://www.linkedin.com/in/marcelo-santos-alvarez/',
+    icon: LinkedinLogo
+  },
+  {
+    ariaLabel: 'Visit GitHub profile (opens in a new tab)',
+    href: 'https://github.com/mar-alv',
+    icon: GithubLogo
+  },
+  {
+    ariaLabel: 'Visit CodePen profile (opens in a new tab)',
+    href: 'https://codepen.io/Marcelo-Alvarez-the-sasster',
+    icon: CodepenLogo
+  }
+]
+---
+
+<footer class="flex justify-between items-center">
+  <div class="gap-3 flex">
+    {socialLinks.map(({ href, ariaLabel, icon: Icon }) => (
+      <Button asChild size="icon" variant="ghost">
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={ariaLabel}
+        >
+          <Icon size={24} />
+        </a>
+      </Button>
+    ))}
+  </div>
+
+  <p class="text-center text-3xl">Made with 🧡 and Astro</p>
 </footer>
