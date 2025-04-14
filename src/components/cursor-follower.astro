@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <style>
@@ -10,8 +11,12 @@
     opacity: 0;
     pointer-events: none;
     border-radius: 50%;
-    background-color: rgba(253, 230, 138, .7);
-    transition: transform 0.1s ease, opacity 0.3s ease, width 0.5s ease, height 0.5s ease;
+    background-color: rgba(253, 230, 138, 0.7);
+    transition:
+      transform 0.1s ease,
+      opacity 0.3s ease,
+      width 0.5s ease,
+      height 0.5s ease;
   }
 
   .visible {
@@ -24,7 +29,7 @@
   }
 </style>
 
-<div class="circle small" id="follower"></div>
+<div class='circle small' id='follower'></div>
 
 <script>
   const follower = document.getElementById('follower')
@@ -32,7 +37,7 @@
   let timeout = 0
 
   document.addEventListener('mousemove', (event) => {
-		if (!follower) return
+    if (!follower) return
 
     follower.style.transform = `translate(${event.clientX - 15}px, ${event.clientY - 15}px)`
     follower.classList.add('visible')
@@ -46,7 +51,7 @@
   })
 
   document.addEventListener('mouseleave', () => {
-		if (!follower) return
+    if (!follower) return
 
     follower.classList.add('small')
   })

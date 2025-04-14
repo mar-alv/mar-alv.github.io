@@ -1,9 +1,10 @@
 ---
-import CursorFollower from '@/components/cursor-follower.astro';
+import CursorFollower from '@/components/cursor-follower.astro'
+import Footer from '@/components/footer.astro'
 import { Header } from '@/components/header'
 
 interface Props {
-	title: string
+  title: string
 }
 
 const { title } = Astro.props
@@ -13,42 +14,44 @@ const currentPath = Astro.url.pathname
 
 <!doctype html>
 <html lang='en'>
-	<head>
-		<link rel='preconnect' href='https://fonts.googleapis.com'>
-		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin'>
+  <head>
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin' />
 
-		<meta charset='UTF-8' />
-		<meta name='description' content='Astro description' />
-		<meta name='viewport' content='width=device-width' />
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
 
-		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 
-		<link href='https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap' rel='stylesheet'>
+    <link
+      href='https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap'
+      rel='stylesheet'
+    />
 
-		<meta name='generator' content={Astro.generator} />
+    <meta name='generator' content={Astro.generator} />
 
-		<title>{title}</title>
-	</head>
+    <title>{title}</title>
+  </head>
 
-	<body class='h-dvh relative font-reenie text-amber-900 bg-amber-50/50'>
-		<CursorFollower />
+  <body class='h-dvh relative font-reenie text-amber-900 bg-amber-50/50'>
+    <CursorFollower />
 
-		<div class='h-full max-w-6xl w-full mx-auto p-5 flex flex-col'>
-			<Header currentPath={currentPath} />
+    <div class='h-full max-w-6xl w-full mx-auto p-5 flex flex-col'>
+      <Header currentPath={currentPath} />
 
-			<slot />
+      <slot />
 
-			<footer>
-				<p class='text-center text-3xl'>
-					Made with 🧡 and Astro
-				</p>
-			</footer>
-		</div>
-	</body>
+      <Footer />
+    </div>
+  </body>
 </html>
 
 <style is:global>
-	* { 
-		transition: color .3s, background-color .3s, transform .3s;
-	}
+  * {
+    transition:
+      color 0.3s,
+      background-color 0.3s,
+      transform 0.3s;
+  }
 </style>
