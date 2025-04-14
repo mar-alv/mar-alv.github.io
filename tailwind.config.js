@@ -1,3 +1,4 @@
+// TODO: update to version 4
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
