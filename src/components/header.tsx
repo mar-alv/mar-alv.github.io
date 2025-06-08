@@ -53,6 +53,8 @@ export function Header({ currentPath }: Props) {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
+
+      {/* TODO: add language select */}
     </header>
   )
 }

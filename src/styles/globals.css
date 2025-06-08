@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+	TODO: change bg color of the cursor highlighted text
+*/
+
 @layer base {
   :root {
     --background: 0 0% 100%;
